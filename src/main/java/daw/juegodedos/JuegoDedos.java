@@ -18,7 +18,8 @@ public class JuegoDedos {
         
         int fingUser = 0, totalUser = 0;
         
-         
+        fingUser = getNumberFromUser(0, 5, text1);
+        totalUser = getNumberFromUser(fingUser, 10, text2);
     }
 
     public static int getNumberFromUser(int min, int max, String text) {
