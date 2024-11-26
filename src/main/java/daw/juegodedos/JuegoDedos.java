@@ -18,6 +18,7 @@ public class JuegoDedos {
         String text2 = "Introduce el total de dedos: ";
         
         int fingUser = 0, totalUser = 0;
+        int fingMach = 0, totalMach = 0;
         
         fingUser = getNumberFromUser(0, 5, text1);
         totalUser = getNumberFromUser(fingUser, 10, text2);
