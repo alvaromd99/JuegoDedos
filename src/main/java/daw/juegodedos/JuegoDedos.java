@@ -44,6 +44,12 @@ public class JuegoDedos {
         } while (true);
     }
     
+    public static int getNumberFromMachine() {
+        Random rd = new Random();
+        
+        return rd.nextInt(0, 6);
+    }
+    
     public static int getNumberFromMachine(int min) {
         Random rd = new Random();
         
