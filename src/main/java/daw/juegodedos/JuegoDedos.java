@@ -20,12 +20,16 @@ public class JuegoDedos {
         int fingUser = 0, totalUser = 0;
         int fingMach = 0, totalMach = 0;
         
-        fingUser = getNumberFromUser(0, 5, text1);
-        totalUser = getNumberFromUser(fingUser, 10, text2);
+        fingUser = getNumberFromUser(0, text1);
+        totalUser = getNumberFromUser(fingUser, text2);
+        
+        fingMach = getNumberFromMachine();
+        totalMach = getNumberFromMachine(fingMach);
     }
-
-    public static int getNumberFromUser(int min, int max, String text) {
+    
+    public static int getNumberFromUser(int min, String text) {
         Scanner sc = new Scanner(System.in);
+        int max = min + 6;
         int num = 0;
 
         do {
@@ -53,6 +57,6 @@ public class JuegoDedos {
     public static int getNumberFromMachine(int min) {
         Random rd = new Random();
         
-        return rd.nextInt((min + 1), (min + 5));
+        return rd.nextInt((min + 1), (min + 6));
     }
 }
