@@ -60,4 +60,23 @@ public class JuegoDedos {
         
         return rd.nextInt((min + 1), (min + 6));
     }
+    
+    public static int getResult(int numUser, int totalUser, int numMach, 
+            int totalMach) {
+        // Si es 0 lo convertimos en 1, porque 0 dedos vale 1
+        numUser = numUser == 0 ? 1 : numUser;
+        numMach = numMach == 0 ? 1 : numMach;
+        
+        int totalNum = numUser + numMach;
+        
+        if (totalNum == totalUser && totalNum == totalMach) {
+            return 0;
+        } else if (totalNum == totalUser) {
+            return 1;
+        } else if (totalNum == totalMach) {
+            return 2;
+        } else {
+            return -1;
+        }
+    }
 }
