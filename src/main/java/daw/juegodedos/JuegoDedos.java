@@ -4,6 +4,7 @@
 package daw.juegodedos;
 
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -40,5 +41,11 @@ public class JuegoDedos {
                 sc.nextLine();
             }
         } while (true);
+    }
+    
+    public static int getNumberFromMachine(int min) {
+        Random rd = new Random();
+        
+        return rd.nextInt((min + 1), (min + 5));
     }
 }
