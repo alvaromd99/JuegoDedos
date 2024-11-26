@@ -68,7 +68,15 @@ public class JuegoDedos {
             System.out.println("Error en la puntuacion.");
         }
     }
-
+    
+    /**
+     * Muestra los datos que pasamos
+     * 
+     * @param nUser dedos del usuario
+     * @param tUser total del usuario
+     * @param nMach dedos de la maquina
+     * @param tMach total de la maquina
+     */
     public static void showSelected(int nUser, int tUser, int nMach,
             int tMach) {
         String text = """
@@ -79,7 +87,15 @@ public class JuegoDedos {
                               tMach);
         System.out.println(text);
     }
-
+    
+    /**
+     * Devuelve un numero desde un minimo hasta el minimo mas 6 
+     * 
+     * @param min el numero minimo que puede introducir
+     * @param text el texto para informar al usuario
+     * @return  el numero que ha introducido y cumple con nuestra reestriccion
+     *          de min y max
+     */
     public static int getNumberFromUser(int min, String text) {
         Scanner sc = new Scanner(System.in);
         int max = min + 6;
@@ -100,19 +116,43 @@ public class JuegoDedos {
             }
         } while (true);
     }
-
+    
+    /**
+     * Devuelve un numero entero random entre 0 y 5
+     * 
+     * @return int entre 0 y 5
+     */
     public static int getNumberFromMachine() {
         Random rd = new Random();
 
         return rd.nextInt(0, 6);
     }
-
+    
+    /**
+     * Devuelve un numero entero random entre el minimo que pasamos y el minimo
+     * mas 6
+     * 
+     * @param min el numero min
+     * @return  int entre min y min mas 6
+     */
     public static int getNumberFromMachine(int min) {
         Random rd = new Random();
 
         return rd.nextInt((min + 1), (min + 6));
     }
-
+    
+    /**
+     * Devulve el resultado del juego con los numeros que pasamos
+     * 
+     * @param numUser dedos del usuario
+     * @param totalUser total que predice el usuario
+     * @param numMach dedos de la maquina
+     * @param totalMach total que predice la maquina
+     * @return  {@code 0} Los dos han acertado, es empate
+     *          {@code 1} El usuario ha acertado
+     *          {@code 2} La maquina ha acertado
+     *          {@code 3} Ninguno de los dos ha acertado
+     */
     public static int getResult(int numUser, int totalUser, int numMach,
             int totalMach) {
         // Si es 0 lo convertimos en 1, porque 0 dedos vale 1
