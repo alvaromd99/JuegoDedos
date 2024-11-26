@@ -19,6 +19,7 @@ public class JuegoDedos {
         
         int fingUser = 0, totalUser = 0;
         int fingMach = 0, totalMach = 0;
+        int winUser = 0, winMach = 0;
         
         fingUser = getNumberFromUser(0, text1);
         totalUser = getNumberFromUser(fingUser, text2);
