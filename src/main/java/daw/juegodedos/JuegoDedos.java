@@ -22,39 +22,50 @@ public class JuegoDedos {
         int res = 0;
         int winUser = 0, winMach = 0;
 
-        fingUser = getNumberFromUser(0, text1);
-        totalUser = getNumberFromUser(fingUser, text2);
 
-        fingMach = getNumberFromMachine();
-        totalMach = getNumberFromMachine(fingMach);
+        do {
+            fingUser = getNumberFromUser(0, text1);
+            totalUser = getNumberFromUser(fingUser, text2);
 
-        res = getResult(fingUser, totalUser, fingMach, totalMach);
+            fingMach = getNumberFromMachine();
+            totalMach = getNumberFromMachine(fingMach);
+
+            res = getResult(fingUser, totalUser, fingMach, totalMach);
+            
+            switch (res) {
+                case 0 -> {
+                    showSelected(fingUser, totalUser, fingMach, totalMach);
+                    System.out.println("El resultado es EMPATE.");
+                }
+                case 1 -> {
+                    showSelected(fingUser, totalUser, fingMach, totalMach);
+                    System.out.println("El ganador es el USUARIO.");
+
+                    winUser++;
+                    winMach = 0;
+                }
+                case 2 -> {
+                    showSelected(fingUser, totalUser, fingMach, totalMach);
+                    System.out.println("El ganador es la MAQUINA.");
+
+                    winMach++;
+                    winUser = 0;
+                }
+                case 3 -> {
+                    showSelected(fingUser, totalUser, fingMach, totalMach);
+                    System.out.println("Ninguno ha acertado.");
+                }
+                default ->
+                    System.out.println("Error en el resultado.");
+            }
+        } while (winUser < 2 && winMach < 2);
         
-        switch (res) {
-            case 0 -> {
-                showSelected(fingUser, totalUser, fingMach, totalMach);
-                System.out.println("El resultado es EMPATE.");
-            }
-            case 1 -> {
-                showSelected(fingUser, totalUser, fingMach, totalMach);
-                System.out.println("El ganador es el USUARIO.");
-
-                winUser++;
-                winMach = 0;
-            }
-            case 2 -> {
-                showSelected(fingUser, totalUser, fingMach, totalMach);
-                System.out.println("El ganador es la MAQUINA.");
-
-                winMach++;
-                winUser = 0;
-            }
-            case 3 -> {
-                showSelected(fingUser, totalUser, fingMach, totalMach);
-                System.out.println("Ninguno ha acertado.");
-            }
-            default ->
-                System.out.println("Error en el resultado.");
+        if (winUser == 2) {
+            System.out.println("Has ganado!!");
+        } else if (winMach == 2) {
+            System.out.println("Has perdido :(");
+        } else {
+            System.out.println("Error en la puntuacion.");
         }
     }
 
@@ -64,8 +75,8 @@ public class JuegoDedos {
                       Dedos Usuario: %d
                       Total Usuario: %d
                       Dedos Maquina: %d
-                      Total Maquina: %d
-                      """.formatted(nUser, tUser, nMach, tMach);
+                      Total Maquina: %d""".formatted(nUser, tUser, nMach, 
+                              tMach);
         System.out.println(text);
     }
 
