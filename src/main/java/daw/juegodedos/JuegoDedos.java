@@ -151,7 +151,7 @@ public class JuegoDedos {
      * @return  {@code 0} Los dos han acertado, es empate
      *          {@code 1} El usuario ha acertado
      *          {@code 2} La maquina ha acertado
-     *          {@code 3} Ninguno de los dos ha acertado
+     *          {@code 3} Ninguno de los dos ha acertado 
      */
     public static int getResult(int numUser, int totalUser, int numMach,
             int totalMach) {
